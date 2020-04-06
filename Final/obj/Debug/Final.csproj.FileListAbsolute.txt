@@ -102,3 +102,4 @@ C:\Users\dalex\Documents\GitHub\Field-Group-Project\Final\obj\Debug\Final.csproj
 C:\Users\dalex\Documents\GitHub\Field-Group-Project\Final\obj\Debug\Final.csproj.CopyComplete
 C:\Users\dalex\Documents\GitHub\Field-Group-Project\Final\obj\Debug\WebApplication1.dll
 C:\Users\dalex\Documents\GitHub\Field-Group-Project\Final\obj\Debug\WebApplication1.pdb
+C:\Users\dalex\Documents\GitHub\Field-Group-Project\Final\obj\Debug\Final.csproj.CoreCompileInputs.cache
