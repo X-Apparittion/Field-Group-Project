@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Final_DBModelStoreContainer" CdmEntityContainer="Final_DBEntities">
+    <EntitySetMapping Name="Courses">
+      <EntityTypeMapping TypeName="Final_DBModel.Cours">
+        <MappingFragment StoreEntitySet="Courses">
+          <ScalarProperty Name="Difficulty" ColumnName="Difficulty" />
+          <ScalarProperty Name="Avaliability" ColumnName="Avaliability" />
+          <ScalarProperty Name="Credit_Load" ColumnName="Credit_Load" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="Teacher_ID" ColumnName="Teacher_ID" />
+          <ScalarProperty Name="Course_ID" ColumnName="Course_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fora">
+      <EntityTypeMapping TypeName="Final_DBModel.Forum">
+        <MappingFragment StoreEntitySet="Forum">
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Course_ID" ColumnName="Course_ID" />
+          <ScalarProperty Name="Post_date" ColumnName="Post_date" />
+          <ScalarProperty Name="Post_Content" ColumnName="Post_Content" />
+          <ScalarProperty Name="Post_ID" ColumnName="Post_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Teachers">
+      <EntityTypeMapping TypeName="Final_DBModel.Teacher">
+        <MappingFragment StoreEntitySet="Teachers">
+          <ScalarProperty Name="Rating" ColumnName="Rating" />
+          <ScalarProperty Name="College" ColumnName="College" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="Courses" ColumnName="Courses" />
+          <ScalarProperty Name="LName" ColumnName="LName" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="Teacher_ID" ColumnName="Teacher_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users_Stud">
+      <EntityTypeMapping TypeName="Final_DBModel.Users_Stud">
+        <MappingFragment StoreEntitySet="Users_Stud">
+          <ScalarProperty Name="CurrentYr" ColumnName="CurrentYr" />
+          <ScalarProperty Name="DateJoined" ColumnName="DateJoined" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

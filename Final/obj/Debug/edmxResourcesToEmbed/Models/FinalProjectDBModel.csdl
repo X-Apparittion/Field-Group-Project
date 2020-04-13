@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Final_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="Final_DBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Courses" EntityType="Final_DBModel.Cours" />
+    <EntitySet Name="Fora" EntityType="Final_DBModel.Forum" />
+    <EntitySet Name="Teachers" EntityType="Final_DBModel.Teacher" />
+    <EntitySet Name="Users_Stud" EntityType="Final_DBModel.Users_Stud" />
+    <AssociationSet Name="FK__Courses__Teacher__3E52440B" Association="Final_DBModel.FK__Courses__Teacher__3E52440B">
+      <End Role="Teacher" EntitySet="Teachers" />
+      <End Role="Cours" EntitySet="Courses" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Forum__Course_ID__403A8C7D" Association="Final_DBModel.FK__Forum__Course_ID__403A8C7D">
+      <End Role="Cours" EntitySet="Courses" />
+      <End Role="Forum" EntitySet="Fora" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Forum__User_ID__3F466844" Association="Final_DBModel.FK__Forum__User_ID__3F466844">
+      <End Role="Users_Stud" EntitySet="Users_Stud" />
+      <End Role="Forum" EntitySet="Fora" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Cours">
+    <Key>
+      <PropertyRef Name="Course_ID" />
+    </Key>
+    <Property Name="Course_ID" Type="Int32" Nullable="false" />
+    <Property Name="Teacher_ID" Type="Int32" Nullable="false" />
+    <Property Name="Department" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="Credit_Load" Type="Decimal" Nullable="false" Precision="1" Scale="0" />
+    <Property Name="Avaliability" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Difficulty" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Teacher" Relationship="Final_DBModel.FK__Courses__Teacher__3E52440B" FromRole="Cours" ToRole="Teacher" />
+    <NavigationProperty Name="Fora" Relationship="Final_DBModel.FK__Forum__Course_ID__403A8C7D" FromRole="Cours" ToRole="Forum" />
+  </EntityType>
+  <EntityType Name="Forum">
+    <Key>
+      <PropertyRef Name="Post_ID" />
+    </Key>
+    <Property Name="Post_ID" Type="Decimal" Nullable="false" Precision="4" Scale="0" />
+    <Property Name="Post_Content" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Post_date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Course_ID" Type="Int32" Nullable="false" />
+    <Property Name="User_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Cours" Relationship="Final_DBModel.FK__Forum__Course_ID__403A8C7D" FromRole="Forum" ToRole="Cours" />
+    <NavigationProperty Name="Users_Stud" Relationship="Final_DBModel.FK__Forum__User_ID__3F466844" FromRole="Forum" ToRole="Users_Stud" />
+  </EntityType>
+  <EntityType Name="Teacher">
+    <Key>
+      <PropertyRef Name="Teacher_ID" />
+    </Key>
+    <Property Name="Teacher_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FName" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="LName" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Courses" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="Department" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="College" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="Rating" Type="Decimal" Nullable="false" Precision="1" Scale="0" />
+    <NavigationProperty Name="Courses1" Relationship="Final_DBModel.FK__Courses__Teacher__3E52440B" FromRole="Teacher" ToRole="Cours" />
+  </EntityType>
+  <EntityType Name="Users_Stud">
+    <Key>
+      <PropertyRef Name="User_ID" />
+    </Key>
+    <Property Name="User_ID" Type="Int32" Nullable="false" />
+    <Property Name="Username" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="DateJoined" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CurrentYr" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Fora" Relationship="Final_DBModel.FK__Forum__User_ID__3F466844" FromRole="Users_Stud" ToRole="Forum" />
+  </EntityType>
+  <Association Name="FK__Courses__Teacher__3E52440B">
+    <End Type="Final_DBModel.Teacher" Role="Teacher" Multiplicity="1" />
+    <End Type="Final_DBModel.Cours" Role="Cours" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teacher">
+        <PropertyRef Name="Teacher_ID" />
+      </Principal>
+      <Dependent Role="Cours">
+        <PropertyRef Name="Teacher_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Forum__Course_ID__403A8C7D">
+    <End Type="Final_DBModel.Cours" Role="Cours" Multiplicity="1" />
+    <End Type="Final_DBModel.Forum" Role="Forum" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cours">
+        <PropertyRef Name="Course_ID" />
+      </Principal>
+      <Dependent Role="Forum">
+        <PropertyRef Name="Course_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Forum__User_ID__3F466844">
+    <End Type="Final_DBModel.Users_Stud" Role="Users_Stud" Multiplicity="1" />
+    <End Type="Final_DBModel.Forum" Role="Forum" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users_Stud">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Forum">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
