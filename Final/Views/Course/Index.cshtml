@@ -1,0 +1,58 @@
+﻿@model IEnumerable<WebApplication1.Models.Cours>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Department)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Credit_Load)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Avaliability)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Difficulty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Teacher.FName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Department)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Credit_Load)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Avaliability)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Difficulty)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Teacher.FName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Course_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Course_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Course_ID })
+        </td>
+    </tr>
+}
+
+</table>
