@@ -218,6 +218,10 @@
     <Content Include="Content\Images\Creator\intro-1585863581.jpg" />
     <Content Include="Content\Images\Creator\_3112903b.jpg" />
     <Content Include="Content\Images\New icon.png" />
+    <Content Include="Content\uikit-rtl.css" />
+    <Content Include="Content\uikit-rtl.min.css" />
+    <Content Include="Content\uikit.css" />
+    <Content Include="Content\uikit.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
