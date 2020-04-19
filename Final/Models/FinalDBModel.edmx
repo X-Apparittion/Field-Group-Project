@@ -4,12 +4,12 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="Final_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Final_DBModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Courses">
           <Key>
             <PropertyRef Name="Course_ID" />
           </Key>
-          <Property Name="Course_ID" Type="int" Nullable="false" />
+          <Property Name="Course_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Teacher_ID" Type="int" Nullable="false" />
           <Property Name="Department" Type="nchar" MaxLength="50" Nullable="false" />
           <Property Name="Credit_Load" Type="numeric" Precision="1" Scale="0" Nullable="false" />
@@ -20,7 +20,7 @@
           <Key>
             <PropertyRef Name="Post_ID" />
           </Key>
-          <Property Name="Post_ID" Type="numeric" Precision="4" Scale="0" Nullable="false" />
+          <Property Name="Post_ID" Type="numeric" Precision="4" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Post_Content" Type="text" Nullable="false" />
           <Property Name="Post_date" Type="date" Nullable="false" />
           <Property Name="Course_ID" Type="int" Nullable="false" />
@@ -42,14 +42,14 @@
           <Key>
             <PropertyRef Name="User_ID" />
           </Key>
-          <Property Name="User_ID" Type="int" Nullable="false" />
+          <Property Name="User_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Username" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Password" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="DateJoined" Type="date" Nullable="false" />
           <Property Name="CurrentYr" Type="nvarchar" MaxLength="20" Nullable="false" />
         </EntityType>
-        <Association Name="FK__Courses__Teacher__3E52440B">
+        <Association Name="FK__Courses__Teacher__2B3F6F97">
           <End Role="Teachers" Type="Self.Teachers" Multiplicity="1" />
           <End Role="Courses" Type="Self.Courses" Multiplicity="*" />
           <ReferentialConstraint>
@@ -61,7 +61,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Forum__Course_ID__403A8C7D">
+        <Association Name="FK__Forum__Course_ID__2C3393D0">
           <End Role="Courses" Type="Self.Courses" Multiplicity="1" />
           <End Role="Forum" Type="Self.Forum" Multiplicity="*" />
           <ReferentialConstraint>
@@ -73,7 +73,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Forum__User_ID__3F466844">
+        <Association Name="FK__Forum__User_ID__2D27B809">
           <End Role="Users_Stud" Type="Self.Users_Stud" Multiplicity="1" />
           <End Role="Forum" Type="Self.Forum" Multiplicity="*" />
           <ReferentialConstraint>
@@ -85,113 +85,96 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Final_DBModelStoreContainer">
+        <EntityContainer Name="Final_DBModel1StoreContainer">
           <EntitySet Name="Courses" EntityType="Self.Courses" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Forum" EntityType="Self.Forum" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Teachers" EntityType="Self.Teachers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users_Stud" EntityType="Self.Users_Stud" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Courses__Teacher__3E52440B" Association="Self.FK__Courses__Teacher__3E52440B">
+          <AssociationSet Name="FK__Courses__Teacher__2B3F6F97" Association="Self.FK__Courses__Teacher__2B3F6F97">
             <End Role="Teachers" EntitySet="Teachers" />
             <End Role="Courses" EntitySet="Courses" />
           </AssociationSet>
-          <AssociationSet Name="FK__Forum__Course_ID__403A8C7D" Association="Self.FK__Forum__Course_ID__403A8C7D">
+          <AssociationSet Name="FK__Forum__Course_ID__2C3393D0" Association="Self.FK__Forum__Course_ID__2C3393D0">
             <End Role="Courses" EntitySet="Courses" />
             <End Role="Forum" EntitySet="Forum" />
           </AssociationSet>
-          <AssociationSet Name="FK__Forum__User_ID__3F466844" Association="Self.FK__Forum__User_ID__3F466844">
+          <AssociationSet Name="FK__Forum__User_ID__2D27B809" Association="Self.FK__Forum__User_ID__2D27B809">
             <End Role="Users_Stud" EntitySet="Users_Stud" />
             <End Role="Forum" EntitySet="Forum" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="Final_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="Final_DBEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Courses" EntityType="Final_DBModel.Cours" />
-          <EntitySet Name="Fora" EntityType="Final_DBModel.Forum" />
-          <EntitySet Name="Teachers" EntityType="Final_DBModel.Teacher" />
-          <EntitySet Name="Users_Stud" EntityType="Final_DBModel.Users_Stud" />
-          <AssociationSet Name="FK__Courses__Teacher__3E52440B" Association="Final_DBModel.FK__Courses__Teacher__3E52440B">
-            <End Role="Teacher" EntitySet="Teachers" />
-            <End Role="Cours" EntitySet="Courses" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Forum__Course_ID__403A8C7D" Association="Final_DBModel.FK__Forum__Course_ID__403A8C7D">
-            <End Role="Cours" EntitySet="Courses" />
-            <End Role="Forum" EntitySet="Fora" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Forum__User_ID__3F466844" Association="Final_DBModel.FK__Forum__User_ID__3F466844">
-            <End Role="Users_Stud" EntitySet="Users_Stud" />
-            <End Role="Forum" EntitySet="Fora" />
-          </AssociationSet>
-        </EntityContainer>
+      <Schema Namespace="Final_DBModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Cours">
           <Key>
             <PropertyRef Name="Course_ID" />
           </Key>
-          <Property Name="Course_ID" Type="Int32" Nullable="false" />
+          <Property Name="Course_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Teacher_ID" Type="Int32" Nullable="false" />
-          <Property Name="Department" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
-          <Property Name="Credit_Load" Type="Decimal" Nullable="false" Precision="1" Scale="0" />
+          <Property Name="Department" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Credit_Load" Type="Decimal" Precision="1" Scale="0" Nullable="false" />
           <Property Name="Avaliability" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="Difficulty" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Teacher" Relationship="Final_DBModel.FK__Courses__Teacher__3E52440B" FromRole="Cours" ToRole="Teacher" />
-          <NavigationProperty Name="Fora" Relationship="Final_DBModel.FK__Forum__Course_ID__403A8C7D" FromRole="Cours" ToRole="Forum" />
+          <NavigationProperty Name="Teacher" Relationship="Self.FK__Courses__Teacher__2B3F6F97" FromRole="Courses" ToRole="Teachers" />
+          <NavigationProperty Name="Fora" Relationship="Self.FK__Forum__Course_ID__2C3393D0" FromRole="Courses" ToRole="Forum" />
         </EntityType>
         <EntityType Name="Forum">
           <Key>
             <PropertyRef Name="Post_ID" />
           </Key>
-          <Property Name="Post_ID" Type="Decimal" Nullable="false" Precision="4" Scale="0" />
-          <Property Name="Post_Content" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Post_ID" Type="Decimal" Precision="4" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Post_Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Post_date" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Course_ID" Type="Int32" Nullable="false" />
           <Property Name="User_ID" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Cours" Relationship="Final_DBModel.FK__Forum__Course_ID__403A8C7D" FromRole="Forum" ToRole="Cours" />
-          <NavigationProperty Name="Users_Stud" Relationship="Final_DBModel.FK__Forum__User_ID__3F466844" FromRole="Forum" ToRole="Users_Stud" />
+          <NavigationProperty Name="Cours" Relationship="Self.FK__Forum__Course_ID__2C3393D0" FromRole="Forum" ToRole="Courses" />
+          <NavigationProperty Name="Users_Stud" Relationship="Self.FK__Forum__User_ID__2D27B809" FromRole="Forum" ToRole="Users_Stud" />
         </EntityType>
         <EntityType Name="Teacher">
           <Key>
             <PropertyRef Name="Teacher_ID" />
           </Key>
           <Property Name="Teacher_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FName" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
-          <Property Name="LName" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="FName" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="LName" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="Courses" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
-          <Property Name="Department" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
-          <Property Name="College" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
-          <Property Name="Rating" Type="Decimal" Nullable="false" Precision="1" Scale="0" />
-          <NavigationProperty Name="Courses1" Relationship="Final_DBModel.FK__Courses__Teacher__3E52440B" FromRole="Teacher" ToRole="Cours" />
+          <Property Name="Department" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="College" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Rating" Type="Decimal" Precision="1" Scale="0" Nullable="false" />
+          <NavigationProperty Name="Courses1" Relationship="Self.FK__Courses__Teacher__2B3F6F97" FromRole="Teachers" ToRole="Courses" />
         </EntityType>
         <EntityType Name="Users_Stud">
           <Key>
             <PropertyRef Name="User_ID" />
           </Key>
-          <Property Name="User_ID" Type="Int32" Nullable="false" />
-          <Property Name="Username" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Password" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="User_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="DateJoined" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="CurrentYr" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Fora" Relationship="Final_DBModel.FK__Forum__User_ID__3F466844" FromRole="Users_Stud" ToRole="Forum" />
+          <Property Name="CurrentYr" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Fora" Relationship="Self.FK__Forum__User_ID__2D27B809" FromRole="Users_Stud" ToRole="Forum" />
         </EntityType>
-        <Association Name="FK__Courses__Teacher__3E52440B">
-          <End Type="Final_DBModel.Teacher" Role="Teacher" Multiplicity="1" />
-          <End Type="Final_DBModel.Cours" Role="Cours" Multiplicity="*" />
+        <Association Name="FK__Courses__Teacher__2B3F6F97">
+          <End Role="Teachers" Type="Self.Teacher" Multiplicity="1" />
+          <End Role="Courses" Type="Self.Cours" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Teacher">
+            <Principal Role="Teachers">
               <PropertyRef Name="Teacher_ID" />
             </Principal>
-            <Dependent Role="Cours">
+            <Dependent Role="Courses">
               <PropertyRef Name="Teacher_ID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Forum__Course_ID__403A8C7D">
-          <End Type="Final_DBModel.Cours" Role="Cours" Multiplicity="1" />
-          <End Type="Final_DBModel.Forum" Role="Forum" Multiplicity="*" />
+        <Association Name="FK__Forum__Course_ID__2C3393D0">
+          <End Role="Courses" Type="Self.Cours" Multiplicity="1" />
+          <End Role="Forum" Type="Self.Forum" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Cours">
+            <Principal Role="Courses">
               <PropertyRef Name="Course_ID" />
             </Principal>
             <Dependent Role="Forum">
@@ -199,9 +182,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Forum__User_ID__3F466844">
-          <End Type="Final_DBModel.Users_Stud" Role="Users_Stud" Multiplicity="1" />
-          <End Type="Final_DBModel.Forum" Role="Forum" Multiplicity="*" />
+        <Association Name="FK__Forum__User_ID__2D27B809">
+          <End Role="Users_Stud" Type="Self.Users_Stud" Multiplicity="1" />
+          <End Role="Forum" Type="Self.Forum" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users_Stud">
               <PropertyRef Name="User_ID" />
@@ -211,57 +194,75 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityContainer Name="Final_DBEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Courses" EntityType="Self.Cours" />
+          <EntitySet Name="Fora" EntityType="Self.Forum" />
+          <EntitySet Name="Teachers" EntityType="Self.Teacher" />
+          <EntitySet Name="Users_Stud" EntityType="Self.Users_Stud" />
+          <AssociationSet Name="FK__Courses__Teacher__2B3F6F97" Association="Self.FK__Courses__Teacher__2B3F6F97">
+            <End Role="Teachers" EntitySet="Teachers" />
+            <End Role="Courses" EntitySet="Courses" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Forum__Course_ID__2C3393D0" Association="Self.FK__Forum__Course_ID__2C3393D0">
+            <End Role="Courses" EntitySet="Courses" />
+            <End Role="Forum" EntitySet="Fora" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Forum__User_ID__2D27B809" Association="Self.FK__Forum__User_ID__2D27B809">
+            <End Role="Users_Stud" EntitySet="Users_Stud" />
+            <End Role="Forum" EntitySet="Fora" />
+          </AssociationSet>
+        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Final_DBModelStoreContainer" CdmEntityContainer="Final_DBEntities">
+        <EntityContainerMapping StorageEntityContainer="Final_DBModel1StoreContainer" CdmEntityContainer="Final_DBEntities1">
           <EntitySetMapping Name="Courses">
-            <EntityTypeMapping TypeName="Final_DBModel.Cours">
+            <EntityTypeMapping TypeName="Final_DBModel1.Cours">
               <MappingFragment StoreEntitySet="Courses">
-                <ScalarProperty Name="Difficulty" ColumnName="Difficulty" />
-                <ScalarProperty Name="Avaliability" ColumnName="Avaliability" />
-                <ScalarProperty Name="Credit_Load" ColumnName="Credit_Load" />
-                <ScalarProperty Name="Department" ColumnName="Department" />
-                <ScalarProperty Name="Teacher_ID" ColumnName="Teacher_ID" />
                 <ScalarProperty Name="Course_ID" ColumnName="Course_ID" />
+                <ScalarProperty Name="Teacher_ID" ColumnName="Teacher_ID" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="Credit_Load" ColumnName="Credit_Load" />
+                <ScalarProperty Name="Avaliability" ColumnName="Avaliability" />
+                <ScalarProperty Name="Difficulty" ColumnName="Difficulty" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Fora">
-            <EntityTypeMapping TypeName="Final_DBModel.Forum">
+            <EntityTypeMapping TypeName="Final_DBModel1.Forum">
               <MappingFragment StoreEntitySet="Forum">
-                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
-                <ScalarProperty Name="Course_ID" ColumnName="Course_ID" />
-                <ScalarProperty Name="Post_date" ColumnName="Post_date" />
-                <ScalarProperty Name="Post_Content" ColumnName="Post_Content" />
                 <ScalarProperty Name="Post_ID" ColumnName="Post_ID" />
+                <ScalarProperty Name="Post_Content" ColumnName="Post_Content" />
+                <ScalarProperty Name="Post_date" ColumnName="Post_date" />
+                <ScalarProperty Name="Course_ID" ColumnName="Course_ID" />
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Teachers">
-            <EntityTypeMapping TypeName="Final_DBModel.Teacher">
+            <EntityTypeMapping TypeName="Final_DBModel1.Teacher">
               <MappingFragment StoreEntitySet="Teachers">
-                <ScalarProperty Name="Rating" ColumnName="Rating" />
-                <ScalarProperty Name="College" ColumnName="College" />
-                <ScalarProperty Name="Department" ColumnName="Department" />
-                <ScalarProperty Name="Courses" ColumnName="Courses" />
-                <ScalarProperty Name="LName" ColumnName="LName" />
-                <ScalarProperty Name="FName" ColumnName="FName" />
                 <ScalarProperty Name="Teacher_ID" ColumnName="Teacher_ID" />
+                <ScalarProperty Name="FName" ColumnName="FName" />
+                <ScalarProperty Name="LName" ColumnName="LName" />
+                <ScalarProperty Name="Courses" ColumnName="Courses" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="College" ColumnName="College" />
+                <ScalarProperty Name="Rating" ColumnName="Rating" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Users_Stud">
-            <EntityTypeMapping TypeName="Final_DBModel.Users_Stud">
+            <EntityTypeMapping TypeName="Final_DBModel1.Users_Stud">
               <MappingFragment StoreEntitySet="Users_Stud">
-                <ScalarProperty Name="CurrentYr" ColumnName="CurrentYr" />
-                <ScalarProperty Name="DateJoined" ColumnName="DateJoined" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Username" ColumnName="Username" />
                 <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="DateJoined" ColumnName="DateJoined" />
+                <ScalarProperty Name="CurrentYr" ColumnName="CurrentYr" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
