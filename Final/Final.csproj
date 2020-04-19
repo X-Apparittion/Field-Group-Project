@@ -172,40 +172,43 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CoursController.cs" />
+    <Compile Include="Controllers\ForaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\TeachersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Cours.cs">
-      <DependentUpon>FinalProjectDBModel.tt</DependentUpon>
+      <DependentUpon>FinalDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\FinalProjectDBModel.Context.cs">
+    <Compile Include="Models\FinalDBModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>FinalProjectDBModel.Context.tt</DependentUpon>
+      <DependentUpon>FinalDBModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\FinalProjectDBModel.cs">
+    <Compile Include="Models\FinalDBModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>FinalProjectDBModel.tt</DependentUpon>
+      <DependentUpon>FinalDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\FinalProjectDBModel.Designer.cs">
+    <Compile Include="Models\FinalDBModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>FinalProjectDBModel.edmx</DependentUpon>
+      <DependentUpon>FinalDBModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Forum.cs">
-      <DependentUpon>FinalProjectDBModel.tt</DependentUpon>
+      <DependentUpon>FinalDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Teacher.cs">
-      <DependentUpon>FinalProjectDBModel.tt</DependentUpon>
+      <DependentUpon>FinalDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Users_Stud.cs">
-      <DependentUpon>FinalProjectDBModel.tt</DependentUpon>
+      <DependentUpon>FinalDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -229,22 +232,28 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\FinalProjectDBModel.Context.tt">
+    <Content Include="Models\FinalDBModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>FinalProjectDBModel.edmx</DependentUpon>
-      <LastGenOutput>FinalProjectDBModel.Context.cs</LastGenOutput>
+      <DependentUpon>FinalDBModel.edmx</DependentUpon>
+      <LastGenOutput>FinalDBModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\FinalProjectDBModel.tt">
+    <Content Include="Models\FinalDBModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>FinalProjectDBModel.edmx</DependentUpon>
-      <LastGenOutput>FinalProjectDBModel.cs</LastGenOutput>
+      <DependentUpon>FinalDBModel.edmx</DependentUpon>
+      <LastGenOutput>FinalDBModel.cs</LastGenOutput>
     </Content>
+<<<<<<< HEAD
     <EntityDeploy Include="Models\FinalProjectDBModel.edmx">
+=======
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\FinalDBModel.edmx">
+>>>>>>> 87ce941ebe9f28c08e690d2d70f20596dbdff6c0
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>FinalProjectDBModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>FinalDBModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\FinalProjectDBModel.edmx.diagram">
-      <DependentUpon>FinalProjectDBModel.edmx</DependentUpon>
+    <Content Include="Models\FinalDBModel.edmx.diagram">
+      <DependentUpon>FinalDBModel.edmx</DependentUpon>
     </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -478,6 +487,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+<<<<<<< HEAD
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
     <Content Include="Scripts\umd\popper.js.flow" />
@@ -488,6 +498,23 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+=======
+    <Content Include="Views\Teachers\Create.cshtml" />
+    <Content Include="Views\Teachers\Delete.cshtml" />
+    <Content Include="Views\Teachers\Details.cshtml" />
+    <Content Include="Views\Teachers\Edit.cshtml" />
+    <Content Include="Views\Teachers\Index.cshtml" />
+    <Content Include="Views\Fora\Create.cshtml" />
+    <Content Include="Views\Fora\Delete.cshtml" />
+    <Content Include="Views\Fora\Details.cshtml" />
+    <Content Include="Views\Fora\Edit.cshtml" />
+    <Content Include="Views\Fora\Index.cshtml" />
+    <Content Include="Views\Cours\Create.cshtml" />
+    <Content Include="Views\Cours\Delete.cshtml" />
+    <Content Include="Views\Cours\Details.cshtml" />
+    <Content Include="Views\Cours\Edit.cshtml" />
+    <Content Include="Views\Cours\Index.cshtml" />
+>>>>>>> 87ce941ebe9f28c08e690d2d70f20596dbdff6c0
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

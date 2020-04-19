@@ -1,0 +1,51 @@
+﻿@model WebApplication1.Models.Forum
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Forum</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Post_Content)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Post_Content)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Post_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Post_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cours.Department)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cours.Department)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Users_Stud.Username)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Users_Stud.Username)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Post_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
