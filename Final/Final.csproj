@@ -26,7 +26,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <TypeScriptToolsVersion>3.8</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>3.7</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -172,43 +172,40 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\CoursController.cs" />
-    <Compile Include="Controllers\ForaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\TeachersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Cours.cs">
-      <DependentUpon>FinalDBModel.tt</DependentUpon>
+      <DependentUpon>FinalProjectDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\FinalDBModel.Context.cs">
+    <Compile Include="Models\FinalProjectDBModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>FinalDBModel.Context.tt</DependentUpon>
+      <DependentUpon>FinalProjectDBModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\FinalDBModel.cs">
+    <Compile Include="Models\FinalProjectDBModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>FinalDBModel.tt</DependentUpon>
+      <DependentUpon>FinalProjectDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\FinalDBModel.Designer.cs">
+    <Compile Include="Models\FinalProjectDBModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>FinalDBModel.edmx</DependentUpon>
+      <DependentUpon>FinalProjectDBModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Forum.cs">
-      <DependentUpon>FinalDBModel.tt</DependentUpon>
+      <DependentUpon>FinalProjectDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Teacher.cs">
-      <DependentUpon>FinalDBModel.tt</DependentUpon>
+      <DependentUpon>FinalProjectDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Users_Stud.cs">
-      <DependentUpon>FinalDBModel.tt</DependentUpon>
+      <DependentUpon>FinalProjectDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -220,45 +217,245 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\components\accordion.almost-flat.css" />
+    <Content Include="Content\components\accordion.almost-flat.min.css" />
+    <Content Include="Content\components\accordion.css" />
+    <Content Include="Content\components\accordion.gradient.css" />
+    <Content Include="Content\components\accordion.gradient.min.css" />
+    <Content Include="Content\components\accordion.min.css" />
+    <Content Include="Content\components\autocomplete.almost-flat.css" />
+    <Content Include="Content\components\autocomplete.almost-flat.min.css" />
+    <Content Include="Content\components\autocomplete.css" />
+    <Content Include="Content\components\autocomplete.gradient.css" />
+    <Content Include="Content\components\autocomplete.gradient.min.css" />
+    <Content Include="Content\components\autocomplete.min.css" />
+    <Content Include="Content\components\datepicker.almost-flat.css" />
+    <Content Include="Content\components\datepicker.almost-flat.min.css" />
+    <Content Include="Content\components\datepicker.css" />
+    <Content Include="Content\components\datepicker.gradient.css" />
+    <Content Include="Content\components\datepicker.gradient.min.css" />
+    <Content Include="Content\components\datepicker.min.css" />
+    <Content Include="Content\components\dotnav.almost-flat.css" />
+    <Content Include="Content\components\dotnav.almost-flat.min.css" />
+    <Content Include="Content\components\dotnav.css" />
+    <Content Include="Content\components\dotnav.gradient.css" />
+    <Content Include="Content\components\dotnav.gradient.min.css" />
+    <Content Include="Content\components\dotnav.min.css" />
+    <Content Include="Content\components\form-advanced.almost-flat.css" />
+    <Content Include="Content\components\form-advanced.almost-flat.min.css" />
+    <Content Include="Content\components\form-advanced.css" />
+    <Content Include="Content\components\form-advanced.gradient.css" />
+    <Content Include="Content\components\form-advanced.gradient.min.css" />
+    <Content Include="Content\components\form-advanced.min.css" />
+    <Content Include="Content\components\form-file.almost-flat.css" />
+    <Content Include="Content\components\form-file.almost-flat.min.css" />
+    <Content Include="Content\components\form-file.css" />
+    <Content Include="Content\components\form-file.gradient.css" />
+    <Content Include="Content\components\form-file.gradient.min.css" />
+    <Content Include="Content\components\form-file.min.css" />
+    <Content Include="Content\components\form-password.almost-flat.css" />
+    <Content Include="Content\components\form-password.almost-flat.min.css" />
+    <Content Include="Content\components\form-password.css" />
+    <Content Include="Content\components\form-password.gradient.css" />
+    <Content Include="Content\components\form-password.gradient.min.css" />
+    <Content Include="Content\components\form-password.min.css" />
+    <Content Include="Content\components\form-select.almost-flat.css" />
+    <Content Include="Content\components\form-select.almost-flat.min.css" />
+    <Content Include="Content\components\form-select.css" />
+    <Content Include="Content\components\form-select.gradient.css" />
+    <Content Include="Content\components\form-select.gradient.min.css" />
+    <Content Include="Content\components\form-select.min.css" />
+    <Content Include="Content\components\htmleditor.almost-flat.css" />
+    <Content Include="Content\components\htmleditor.almost-flat.min.css" />
+    <Content Include="Content\components\htmleditor.css" />
+    <Content Include="Content\components\htmleditor.gradient.css" />
+    <Content Include="Content\components\htmleditor.gradient.min.css" />
+    <Content Include="Content\components\htmleditor.min.css" />
+    <Content Include="Content\components\nestable.almost-flat.css" />
+    <Content Include="Content\components\nestable.almost-flat.min.css" />
+    <Content Include="Content\components\nestable.css" />
+    <Content Include="Content\components\nestable.gradient.css" />
+    <Content Include="Content\components\nestable.gradient.min.css" />
+    <Content Include="Content\components\nestable.min.css" />
+    <Content Include="Content\components\notify.almost-flat.css" />
+    <Content Include="Content\components\notify.almost-flat.min.css" />
+    <Content Include="Content\components\notify.css" />
+    <Content Include="Content\components\notify.gradient.css" />
+    <Content Include="Content\components\notify.gradient.min.css" />
+    <Content Include="Content\components\notify.min.css" />
+    <Content Include="Content\components\placeholder.almost-flat.css" />
+    <Content Include="Content\components\placeholder.almost-flat.min.css" />
+    <Content Include="Content\components\placeholder.css" />
+    <Content Include="Content\components\placeholder.gradient.css" />
+    <Content Include="Content\components\placeholder.gradient.min.css" />
+    <Content Include="Content\components\placeholder.min.css" />
+    <Content Include="Content\components\progress.almost-flat.css" />
+    <Content Include="Content\components\progress.almost-flat.min.css" />
+    <Content Include="Content\components\progress.css" />
+    <Content Include="Content\components\progress.gradient.css" />
+    <Content Include="Content\components\progress.gradient.min.css" />
+    <Content Include="Content\components\progress.min.css" />
+    <Content Include="Content\components\search.almost-flat.css" />
+    <Content Include="Content\components\search.almost-flat.min.css" />
+    <Content Include="Content\components\search.css" />
+    <Content Include="Content\components\search.gradient.css" />
+    <Content Include="Content\components\search.gradient.min.css" />
+    <Content Include="Content\components\search.min.css" />
+    <Content Include="Content\components\slidenav.almost-flat.css" />
+    <Content Include="Content\components\slidenav.almost-flat.min.css" />
+    <Content Include="Content\components\slidenav.css" />
+    <Content Include="Content\components\slidenav.gradient.css" />
+    <Content Include="Content\components\slidenav.gradient.min.css" />
+    <Content Include="Content\components\slidenav.min.css" />
+    <Content Include="Content\components\slider.almost-flat.css" />
+    <Content Include="Content\components\slider.almost-flat.min.css" />
+    <Content Include="Content\components\slider.css" />
+    <Content Include="Content\components\slider.gradient.css" />
+    <Content Include="Content\components\slider.gradient.min.css" />
+    <Content Include="Content\components\slider.min.css" />
+    <Content Include="Content\components\slideshow.almost-flat.css" />
+    <Content Include="Content\components\slideshow.almost-flat.min.css" />
+    <Content Include="Content\components\slideshow.css" />
+    <Content Include="Content\components\slideshow.gradient.css" />
+    <Content Include="Content\components\slideshow.gradient.min.css" />
+    <Content Include="Content\components\slideshow.min.css" />
+    <Content Include="Content\components\sortable.almost-flat.css" />
+    <Content Include="Content\components\sortable.almost-flat.min.css" />
+    <Content Include="Content\components\sortable.css" />
+    <Content Include="Content\components\sortable.gradient.css" />
+    <Content Include="Content\components\sortable.gradient.min.css" />
+    <Content Include="Content\components\sortable.min.css" />
+    <Content Include="Content\components\sticky.almost-flat.css" />
+    <Content Include="Content\components\sticky.almost-flat.min.css" />
+    <Content Include="Content\components\sticky.css" />
+    <Content Include="Content\components\sticky.gradient.css" />
+    <Content Include="Content\components\sticky.gradient.min.css" />
+    <Content Include="Content\components\sticky.min.css" />
+    <Content Include="Content\components\tooltip.almost-flat.css" />
+    <Content Include="Content\components\tooltip.almost-flat.min.css" />
+    <Content Include="Content\components\tooltip.css" />
+    <Content Include="Content\components\tooltip.gradient.css" />
+    <Content Include="Content\components\tooltip.gradient.min.css" />
+    <Content Include="Content\components\tooltip.min.css" />
+    <Content Include="Content\components\upload.almost-flat.css" />
+    <Content Include="Content\components\upload.almost-flat.min.css" />
+    <Content Include="Content\components\upload.css" />
+    <Content Include="Content\components\upload.gradient.css" />
+    <Content Include="Content\components\upload.gradient.min.css" />
+    <Content Include="Content\components\upload.min.css" />
     <Content Include="Content\Images\Creator\C3Do2jFW8AA5ATc.jpg" />
     <Content Include="Content\Images\Creator\index.jpg" />
     <Content Include="Content\Images\Creator\intro-1585863581.jpg" />
     <Content Include="Content\Images\Creator\_3112903b.jpg" />
     <Content Include="Content\Images\New icon.png" />
-    <Content Include="Content\uikit-rtl.css" />
-    <Content Include="Content\uikit-rtl.min.css" />
+    <Content Include="Content\uikit.almost-flat.css" />
+    <Content Include="Content\uikit.almost-flat.min.css" />
     <Content Include="Content\uikit.css" />
+    <Content Include="Content\uikit.gradient.css" />
+    <Content Include="Content\uikit.gradient.min.css" />
     <Content Include="Content\uikit.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\FinalDBModel.Context.tt">
+    <Content Include="Models\FinalProjectDBModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>FinalDBModel.edmx</DependentUpon>
-      <LastGenOutput>FinalDBModel.Context.cs</LastGenOutput>
+      <DependentUpon>FinalProjectDBModel.edmx</DependentUpon>
+      <LastGenOutput>FinalProjectDBModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\FinalDBModel.tt">
+    <Content Include="Models\FinalProjectDBModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>FinalDBModel.edmx</DependentUpon>
-      <LastGenOutput>FinalDBModel.cs</LastGenOutput>
+      <DependentUpon>FinalProjectDBModel.edmx</DependentUpon>
+      <LastGenOutput>FinalProjectDBModel.cs</LastGenOutput>
     </Content>
-<<<<<<< HEAD
     <EntityDeploy Include="Models\FinalProjectDBModel.edmx">
-=======
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\FinalDBModel.edmx">
->>>>>>> 87ce941ebe9f28c08e690d2d70f20596dbdff6c0
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>FinalDBModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>FinalProjectDBModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\FinalDBModel.edmx.diagram">
-      <DependentUpon>FinalDBModel.edmx</DependentUpon>
+    <Content Include="Models\FinalProjectDBModel.edmx.diagram">
+      <DependentUpon>FinalProjectDBModel.edmx</DependentUpon>
     </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\components\accordion.js" />
+    <Content Include="Scripts\components\accordion.min.js" />
+    <Content Include="Scripts\components\autocomplete.js" />
+    <Content Include="Scripts\components\autocomplete.min.js" />
+    <Content Include="Scripts\components\datepicker.js" />
+    <Content Include="Scripts\components\datepicker.min.js" />
+    <Content Include="Scripts\components\form-password.js" />
+    <Content Include="Scripts\components\form-password.min.js" />
+    <Content Include="Scripts\components\form-select.js" />
+    <Content Include="Scripts\components\form-select.min.js" />
+    <Content Include="Scripts\components\grid-parallax.js" />
+    <Content Include="Scripts\components\grid-parallax.min.js" />
+    <Content Include="Scripts\components\grid.js" />
+    <Content Include="Scripts\components\grid.min.js" />
+    <Content Include="Scripts\components\htmleditor.js" />
+    <Content Include="Scripts\components\htmleditor.min.js" />
+    <Content Include="Scripts\components\lightbox.js" />
+    <Content Include="Scripts\components\lightbox.min.js" />
+    <Content Include="Scripts\components\nestable.js" />
+    <Content Include="Scripts\components\nestable.min.js" />
+    <Content Include="Scripts\components\notify.js" />
+    <Content Include="Scripts\components\notify.min.js" />
+    <Content Include="Scripts\components\pagination.js" />
+    <Content Include="Scripts\components\pagination.min.js" />
+    <Content Include="Scripts\components\parallax.js" />
+    <Content Include="Scripts\components\parallax.min.js" />
+    <Content Include="Scripts\components\search.js" />
+    <Content Include="Scripts\components\search.min.js" />
+    <Content Include="Scripts\components\slider.js" />
+    <Content Include="Scripts\components\slider.min.js" />
+    <Content Include="Scripts\components\slideset.js" />
+    <Content Include="Scripts\components\slideset.min.js" />
+    <Content Include="Scripts\components\slideshow-fx.js" />
+    <Content Include="Scripts\components\slideshow-fx.min.js" />
+    <Content Include="Scripts\components\slideshow.js" />
+    <Content Include="Scripts\components\slideshow.min.js" />
+    <Content Include="Scripts\components\sortable.js" />
+    <Content Include="Scripts\components\sortable.min.js" />
+    <Content Include="Scripts\components\sticky.js" />
+    <Content Include="Scripts\components\sticky.min.js" />
+    <Content Include="Scripts\components\timepicker.js" />
+    <Content Include="Scripts\components\timepicker.min.js" />
+    <Content Include="Scripts\components\tooltip.js" />
+    <Content Include="Scripts\components\tooltip.min.js" />
+    <Content Include="Scripts\components\upload.js" />
+    <Content Include="Scripts\components\upload.min.js" />
+    <Content Include="Scripts\core\alert.js" />
+    <Content Include="Scripts\core\alert.min.js" />
+    <Content Include="Scripts\core\button.js" />
+    <Content Include="Scripts\core\button.min.js" />
+    <Content Include="Scripts\core\core.js" />
+    <Content Include="Scripts\core\core.min.js" />
+    <Content Include="Scripts\core\cover.js" />
+    <Content Include="Scripts\core\cover.min.js" />
+    <Content Include="Scripts\core\dropdown.js" />
+    <Content Include="Scripts\core\dropdown.min.js" />
+    <Content Include="Scripts\core\grid.js" />
+    <Content Include="Scripts\core\grid.min.js" />
+    <Content Include="Scripts\core\modal.js" />
+    <Content Include="Scripts\core\modal.min.js" />
+    <Content Include="Scripts\core\nav.js" />
+    <Content Include="Scripts\core\nav.min.js" />
+    <Content Include="Scripts\core\offcanvas.js" />
+    <Content Include="Scripts\core\offcanvas.min.js" />
+    <Content Include="Scripts\core\scrollspy.js" />
+    <Content Include="Scripts\core\scrollspy.min.js" />
+    <Content Include="Scripts\core\smooth-scroll.js" />
+    <Content Include="Scripts\core\smooth-scroll.min.js" />
+    <Content Include="Scripts\core\switcher.js" />
+    <Content Include="Scripts\core\switcher.min.js" />
+    <Content Include="Scripts\core\tab.js" />
+    <Content Include="Scripts\core\tab.min.js" />
+    <Content Include="Scripts\core\toggle.js" />
+    <Content Include="Scripts\core\toggle.min.js" />
+    <Content Include="Scripts\core\touch.js" />
+    <Content Include="Scripts\core\touch.min.js" />
+    <Content Include="Scripts\core\utility.js" />
+    <Content Include="Scripts\core\utility.min.js" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
     <Content Include="Scripts\esm\popper.js" />
@@ -278,6 +475,10 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="Content\bootstrap\_variables.scss" />
     <Content Include="Content\bootstrap\_utilities.scss" />
     <Content Include="Content\bootstrap\_type.scss" />
@@ -445,8 +646,6 @@
     <Content Include="Scripts\src\utils\setAttributes.js" />
     <Content Include="Scripts\src\utils\setStyles.js" />
     <Content Include="Scripts\src\utils\setupEventListeners.js" />
-    <Content Include="Scripts\uikit-icons.js" />
-    <Content Include="Scripts\uikit-icons.min.js" />
     <Content Include="Scripts\uikit.js" />
     <Content Include="Scripts\uikit.min.js" />
     <Content Include="Scripts\umd\popper-utils.js" />
@@ -487,7 +686,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-<<<<<<< HEAD
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
     <Content Include="Scripts\umd\popper.js.flow" />
@@ -498,23 +696,6 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-=======
-    <Content Include="Views\Teachers\Create.cshtml" />
-    <Content Include="Views\Teachers\Delete.cshtml" />
-    <Content Include="Views\Teachers\Details.cshtml" />
-    <Content Include="Views\Teachers\Edit.cshtml" />
-    <Content Include="Views\Teachers\Index.cshtml" />
-    <Content Include="Views\Fora\Create.cshtml" />
-    <Content Include="Views\Fora\Delete.cshtml" />
-    <Content Include="Views\Fora\Details.cshtml" />
-    <Content Include="Views\Fora\Edit.cshtml" />
-    <Content Include="Views\Fora\Index.cshtml" />
-    <Content Include="Views\Cours\Create.cshtml" />
-    <Content Include="Views\Cours\Delete.cshtml" />
-    <Content Include="Views\Cours\Details.cshtml" />
-    <Content Include="Views\Cours\Edit.cshtml" />
-    <Content Include="Views\Cours\Index.cshtml" />
->>>>>>> 87ce941ebe9f28c08e690d2d70f20596dbdff6c0
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
