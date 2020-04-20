@@ -367,20 +367,20 @@
       <DependentUpon>FinalProjectDBModel.edmx</DependentUpon>
       <LastGenOutput>FinalProjectDBModel.cs</LastGenOutput>
     </Content>
-<<<<<<< HEAD
-=======
+    >>>>>>> HEAD
+    =======
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of 43a3d17... Added Controllers and Views
-=======
->>>>>>> parent of 43a3d17... Added Controllers and Views
-=======
->>>>>>> parent of 43a3d17... Added Controllers and Views
-=======
->>>>>>> parent of 43a3d17... Added Controllers and Views
+    >>>>>>> HEAD
+    >>>>>>> HEAD
+    >>>>>>> HEAD
+    >>>>>>> parent of 43a3d17... Added Controllers and Views
+    =======
+    >>>>>>> parent of 43a3d17... Added Controllers and Views
+    =======
+    >>>>>>> parent of 43a3d17... Added Controllers and Views
+    =======
+    >>>>>>> parent of 43a3d17... Added Controllers and Views
     <EntityDeploy Include="Models\FinalProjectDBModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>FinalProjectDBModel.Designer.cs</LastGenOutput>
@@ -700,10 +700,10 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+>>>>>>> HEAD
+>>>>>>> HEAD
+>>>>>>> HEAD
+>>>>>>> HEAD
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
     <Content Include="Scripts\umd\popper.js.flow" />
