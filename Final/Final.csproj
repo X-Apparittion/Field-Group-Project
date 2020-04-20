@@ -373,6 +373,9 @@
     <Content Include="Scripts\bootstrap.min.js" />
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 43a3d17... Added Controllers and Views
+=======
 >>>>>>> parent of 43a3d17... Added Controllers and Views
 =======
 >>>>>>> parent of 43a3d17... Added Controllers and Views
@@ -700,6 +703,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
     <Content Include="Scripts\umd\popper.js.flow" />
@@ -710,6 +714,8 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+=======
+>>>>>>> parent of 43a3d17... Added Controllers and Views
 =======
 >>>>>>> parent of 43a3d17... Added Controllers and Views
 =======
